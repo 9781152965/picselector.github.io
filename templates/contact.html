@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+from django.views.decorators.csrf import csrf_protect
+from django.db import IntegrityError
+
+{% block title %} contact {% endblock title %}
+
+{% block body %}
+<div class="container-fluid  mb-3 py-4">
+    <img src="https://source.unsplash.com/1600x900/?contact" width="200" height="300" class="d-block w-100" alt="...">
+</div>
+<div class="container ">
+    <h2 class="text-center my-2">Contact Us</h2>
+    <form method="post" action="/contact">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="enter your  mobile no.">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email" name='email' aria-describedby="emailHelp">
+            We'll never share your email with anyone
+              
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">password</label>
+            <input type="password" class="form-control" id="password" name='password' placeholder="please enter your password">
+        </div>
+     
+
+        
+        <button class='btn btn-primary' type="submit">Submit</button>
+        </br>
+        </br>
+        </br>
+        </br>
+    </form>
+</div>
+
+{% endblock body %}
+
+<!-- in this my-4 gives margin from top<form method="post" action="/contact"> {% csrf_token %}
+
+    
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" class="form-control" id="name" name='name' placeholder="Enter Your Name">
+
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name='Email address' aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name='password' placeholder="please enter your passward">
+            </div>
+         
+            <div class="form-group">
+                <label for="phone no">phone no.</label>
+                <input type="phone" class="form-control" id="phone no" name='phone' aria-describedby="Enter your phone no." placeholder="Enter your phone no.">
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>-->
